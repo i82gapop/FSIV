@@ -1,0 +1,53 @@
+LEEME.txt correspondiente al ejercicio 2 "Cbg process."
+
+-De este ejercicio se han llevado a cabo las siguientes funcionalidades:
+
+·Uso del programa usando interfaz CLI para el cbg:
+Variación del gamma, brillo y contraste de la imagen
+Variación de los anteriores parametros aplicando el luma para hacerlo sobre el canal Value de HSV
+
+·Uso del programa usando interfaz GUI (interfaz grafica interactiva) para la variación de los parametros anteriores de forma
+dinámica.
+
+
+-Instrucciones de Instalación:
+
+Para compilar el programa, como se nos indica en la descripcion de la práctica bastará con crear la carpeta build, acceder a ella y
+usar cmake .. para usar el cmakelist del directorio padre, una vez hecho haremos make en el directorio build y con ello ya tendremos
+el programa listo para ejecutar.
+
+-Instrucciones de Uso:
+
+Para ejecutar el programa tenemos las siguientes flags disponibles cada una de las cuales hara que el programa se comporte de una manera
+diferente (las cuatro primeras se pueden usar de forma simultanea separandolas con un espacio):
+
+Con -c le tendremos que pasar el valor del contraste en el intervalo [0.0, 2.0]
+
+Con -b le tendremos que pasar el valor del brillo en el intervalo [-1.0, 1.0]
+
+Con -g le tendremos que pasar el valor del gamma en el intervalo [0.0, 2.0]
+
+Con -l no tendremos que pasar ningun valor, solo indicamos que queremos que se procese el canal Value de HSV
+
+Con -i no habra que pasar ningun parametro ya que se abrira la interfaz grafica. En la ventana que se abre 
+apareceran 4 trackbars muy intuitivas que indican el valor del brillo, contraste y gamma de 0 a 200 y el luma de 0 a 1 (activado/desactivado).
+Bastara con mover las trackbars y ver en tiempo real en la ventana del output el resultado. Para guardar el resultado y salir del programa
+bastaría con pulsar la tecla intro como en el anterior ejercicio.
+
+Además de estas flags habra que introducir el path de dos archivos de imagen, uno de la entrada y otro de la salida.
+
+Ejemplos de uso por linea de comandos.
+
+
+Interfaz CLI
+
+./cbg_process ../data/ciclista_original.jpg ../data/ciclista_originalcontraste.jpg -c=1.9
+./cbg_process ../data/ciclista_original.jpg ../data/ciclista_originalbrillo.jpg -b=0.4
+./cbg_process ../data/ciclista_original.jpg ../data/ciclista_originalgamma.jpg -g=1.5
+./cbg_process ../data/ciclista_original.jpg ../data/ciclista_originalbrillohsv.jpg -b=0.9 -l
+./cbg_process ../data/ciclista_original.jpg ../data/ciclista_originaltodosnohsv.jpg -c=1.9 -b=-0.73 -g=0.14
+./cbg_process ../data/ciclista_original.jpg ../data/ciclista_originaltodoshsv.jpg -c=1.9 -b=-0.73 -g=0.14 -l
+
+Interactivo
+
+./cbg_process ../data/ciclista_original.jpg ../data/ciclista_originalinteractivo.jpg -i
