@@ -1,0 +1,28 @@
+PARTES QUE HE REALIZADO DE LA PRACTICA:
+
+-TODO
++Tests
++Funciones del main
++Procesado de imagenes a color con luma incluido
++Modo interactivo
+
+Formas de ejecución
+
+./usm_enhance ../Data/radiografia.png 
+./usm_enhance ../Data/radiografia.png -r=30
+./usm_enhance ../Data/radiografia.png -r=20 -g=2
+./usm_enhance ../Data/radiografia.png -r=40 -g=1.5 -f=0
+./usm_enhance ../Data/radiografia.png -r=40 -g=1.5 -f=1
+./usm_enhance ../Data/radiografia.png -i
+
+./usm_enhance ../Data/ciclista_original.jpg 
+./usm_enhance ../Data/ciclista_original.jpg  -r=30
+./usm_enhance ../Data/ciclista_original.jpg  -r=20 -g=2
+./usm_enhance ../Data/ciclista_original.jpg  -r=40 -g=1.5 -f=0
+./usm_enhance ../Data/ciclista_original.jpg  -r=40 -g=1.5 -f=1
+./usm_enhance ../Data/ciclista_original.jpg  -i
+
+En este ultimo modo se han añadido unas trackbars para poder cambiar los valores, hay que tener en cuenta que al tocar el radio puede quedarse pillado ya que tiene que hacer los calculos pero funcionara si se le deja procesar.
+
+Tras terminar pulsar intro para que se guarde la salida y se cierren todas las ventanas.
+
