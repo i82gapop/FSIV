@@ -1,0 +1,68 @@
+LEEME.txt correspondiente al ejercicio 1 "Realzar primer plano."
+
+-De este ejercicio se han llevado a cabo las siguientes funcionalidades:
+
+·Uso del programa usando interfaz CLI para el realce de las tres formas:
+-Rectángulo
+-Círculo
+-Polígono
+
+·Uso del programa usando interfaz GUI (interfaz grafica interactiva) para el realce de las tres formas citadas anteriormente.
+
+
+-Instrucciones de Instalación:
+
+Para compilar el programa, como se nos indica en la descripcion de la práctica bastará con crear la carpeta build, acceder a ella y
+usar cmake .. para usar el cmakelist del directorio padre, una vez hecho haremos make en el directorio build y con ello ya tendremos
+el programa listo para ejecutar.
+
+-Instrucciones de Uso:
+
+Para ejecutar el programa tenemos las siguientes flags disponibles cada una de las cuales hara que el programa se comporte de una manera
+diferente:
+
+Con -r le tendremos que pasar los parametros x, y, el ancho y el alto de rectangulo, donde x e y representan las coordenadas del vertice
+superior izquierdo del rectangulo que queremos crear como mascara.
+
+Con -c le tendremos que pasar los parametros x,y y el radio, donde x e y representan las coordenadas del centro del circulo que queremos
+crear como mascara.
+
+Con -p le tendremos que pasar los parametros x1,y1,x2,y2,x3,y3... donde cada par de datos corresponde a la coordenada x e y de cada
+vertice del que se compone el poligono que queremos crear como mascara. Muy importante crear al menos 3 puntos y pasar las dos coordenadas
+de cada punto.
+
+Con -i no habra que pasar ningun parametro ya que se abrira la interfaz grafica. En la ventana que se abre se puede ver un trackbar arriba
+el cual indica las 3 opciones (0 para rectangulo, 1 para circulo y 2 para poligonos) tras haber marcado la opción deseada bastaria con 
+pulsar la tecla intro y segun si es un rectangulo/circulo o un poligono hay dos formas de actuar. En el caso de los primeros dos
+para seleccionar el area bastaria con pulsar en un punto con el click izquierdo y arrastrar sin dejar de soltar hasta el vertice extremo
+en el caso del rectangulo, y hasta la distancia que desea que sea el radio en el caso del circulo y soltar el click. Esto se puede repetir 
+por si se hubiera equivocado y una vez decidido que se ha marcado de forma correcta, bastaria con pulsar de nuevo la tecla intro para 
+que se muestren las ventanas input, mascara y output. Para el caso del poligono bastaria con clickar con el click izquierdo y soltando para 
+cada punto de la imagen que desee que sea un vertice del poligono. Una vez haya marcado todos los puntos que desee bastaria con pulsar
+la tecla intro para ver los resultados como en el caso del rectangulo y circulo.
+
+Además de estas flags habra que introducir el path de dos archivos de imagen, uno de la entrada y otro de la salida.
+
+Ejemplos de uso por linea de comandos.
+
+Rectangulo
+
+1. ./realzar_primer_plano ../data/ciclista_original.jpg ../data/ciclista_procesado1r.jpg -r=150,50,50,100
+2. ./realzar_primer_plano ../data/ciclista_original.jpg ../data/ciclista_procesado2r.jpg -r=200,150,150,200
+3. ./realzar_primer_plano ../data/ciclista_original.jpg ../data/ciclista_procesado3r.jpg -r=300,250,150,100
+
+Circulo
+
+1. ./realzar_primer_plano ../data/ciclista_original.jpg ../data/ciclista_procesado1c.jpg -c=250,250,250
+2. ./realzar_primer_plano ../data/ciclista_original.jpg ../data/ciclista_procesado2c.jpg -c=100,250,150
+3. ./realzar_primer_plano ../data/ciclista_original.jpg ../data/ciclista_procesado3c.jpg -c=300,250,150
+
+Poligono
+
+1. ./realzar_primer_plano ../data/ciclista_original.jpg ../data/ciclista_procesado1p.jpg -p=100,100,125,125,120,10,320,250
+2. ./realzar_primer_plano ../data/ciclista_original.jpg ../data/ciclista_procesado2p.jpg -p=150,150,230,150,270,81,230,11,150,11,110,81
+3. ./realzar_primer_plano ../data/ciclista_original.jpg ../data/ciclista_procesado3p.jpg -p=300,250,150,300,250,150,100,150
+
+Interactivo
+
+1. ./realzar_primer_plano ../data/ciclista_original.jpg ../data/ciclista_procesado1i.jpg -i
