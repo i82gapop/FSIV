@@ -1,0 +1,34 @@
+Se han realizado todas las partes de la practica:
+
+Se han implementando y evaluado varias caractericticas.
+Se ha utilizado el clasificador K-NN.
+Se ha validado un clasificador SVM con kernel lineal.
+Se ha validado un clasificador SVM con kernel polinomial y rbf, haciendo uso de sus parametros.
+Se ha validado un clasificar RTrees con sus hiperparametros.
+Se ha implementado el programa test_image.cpp que carga una imagen, selecciona una ROI con una señal y le aplica un modelo de los entrenados previamente.
+
+Para la fase de entrenamiento/validación y la de test algunos de los ejemplos para su ejecución son los siguientes:
+
+./train_test_clf -v --class=0 -f=0 ../fsiv_gtscb modelo.xml --knn_K=1 
+./train_test_clf -t --class=0 -f=0 ../fsiv_gtscb modelo.xml --knn_K=1 
+
+./train_test_clf -v --class=0 -f=1 ../fsiv_gtscb modelo.xml --knn_K=7
+./train_test_clf -t --class=0 -f=1 ../fsiv_gtscb modelo.xml --knn_K=7
+
+./train_test_clf -v --class=1 -f=0 ../fsiv_gtscb modelo.xml --svm_K=0 --svm_C=10000
+./train_test_clf -t --class=1 -f=0 ../fsiv_gtscb modelo.xml --svm_K=0 --svm_C=10000
+
+./train_test_clf -v --class=1 -f=0 ../fsiv_gtscb modelo.xml --svm_K=1 --svm_D=10
+./train_test_clf -t --class=1 -f=0 ../fsiv_gtscb modelo.xml --svm_K=1 --svm_D=10
+
+./train_test_clf -v --class=1 -f=0 ../fsiv_gtscb modelo.xml --svm_K=2 --svm_G=0.05
+./train_test_clf -t --class=1 -f=0 ../fsiv_gtscb modelo.xml --svm_K=2 --svm_G=0.05
+
+./train_test_clf -v --class=2 -f=1 ../fsiv_gtscb modelo.xml --rtrees_V=0 --rtrees_T=50 --rtrees_E=0.01
+./train_test_clf -t --class=2 -f=1 ../fsiv_gtscb modelo.xml --rtrees_V=0 --rtrees_T=50 --rtrees_E=0.01
+
+Para el ejercicio de test_image.cpp algunos de los ejemplos para su ejecución son los siguientes:
+
+
+./test_image ../../fsiv_gtscb ../models/svm.xml ../Data/diamante-3.jpg -f=0 --class=1
+./test_image ../../fsiv_gtscb ../models/knn.xml ../Data/aviso-3.jpg -f=0 --class=0
